@@ -1,0 +1,29 @@
+@(message: String)
+
+@main("Evomatik Uriel Test") {
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src='/assets/js/index.js'></script>
+<link rel="stylesheet" type="text/css" href="assets/js/css/index.css">
+
+    <fieldset class="center">
+        <legend>Personas</legend>
+        <ul id="persons"></ul>
+    </fieldset>
+
+    <div id="container" class="center">
+        <form action="@routes.Application.addPerson()" method="post">
+            <p>RFC:</p><input type="text" name="rfc">
+            <p>Nombre:</p><input type="text" name="nombre">
+            <p>Edad:</p><input type="number" min="0" max="100" name="edad">
+            <button>Agregar Persona</button>
+        </form>
+    </div>
+
+    <div id="containerDel" class="center">
+        <form action='@routes.Application.delPerson()' method="post">
+            <button>Borrar Persona</button>
+        </form>
+    </div>
+
+}
